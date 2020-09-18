@@ -1,5 +1,5 @@
 class SavingAccount{
-double accountNo;
+	double accountNo;
 	String name;
 	double balance;
 	String ifsc;
