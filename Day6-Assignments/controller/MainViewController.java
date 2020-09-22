@@ -52,7 +52,43 @@ public class MainViewController {
 				catch(UserNotFoundException e){
 					System.err.print(e.getMessage());
 				}
+				break;
+			case 4:
+				try{
+					User user1 = new User();
+					
+					System.out.println("Enter User Id");
+					user1.setUserId(scanner.nextInt());
+					
+					System.out.println("Enter phone no");	
+					user1.setPhone(scanner.nextLong());
+					
+					User updatedUser = service.updatePhoneNo(user1);
+					
+					System.out.println(updatedUser);
+				}
+				catch(UserNotFoundException e){
+					System.err.print(e.getMessage());
+				}
+				break;
 				
+			case 5:
+				try{
+					User user1 = new User();
+					
+					System.out.println("Enter User Id");
+					user1.setUserId(scanner.nextInt());
+					
+					System.out.println("Enter password");	
+					user1.setPassword(scanner.next());
+					
+					User updatedUser = service.updatePassword(user1.getUserId(), user1.getPassword());
+					
+					System.out.println(updatedUser);
+				}
+				catch(UserNotFoundException e){
+					System.err.print(e.getMessage());
+				}
 				break;
 				
 			}

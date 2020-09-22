@@ -34,7 +34,18 @@ public class ArrayBackedUserDao implements UserDao {
 			}
 		}
 		throw new UserNotFoundException();
-		
+	}
+	
+	@Override
+	public User updateUser(int userId, User user) throws UserNotFoundException{
+
+		for(int i = 0; i< index; i++){
+			if(userArray[i].getUserId() == userId){
+				userArray[i] = user;
+				return user;
+			}
+		}
+		throw new UserNotFoundException();
 	}
 
 }

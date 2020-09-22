@@ -10,5 +10,10 @@ import com.hsbc.model.beans.User;
 public interface UserDao {
 	public User store(User user);
 	public User[] fetchUsers();
-	public User fetchById(int userId) throws UserNotFoundException;
+	
+	// Throws exception if userId not found else returns user
+	public User fetchById(int userId) throws UserNotFoundException;	
+	
+	// pass updated user and reflect to the database/array/collection & return the same user
+	public User updateUser(int userId, User user) throws UserNotFoundException;
 }

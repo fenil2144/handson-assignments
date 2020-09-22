@@ -27,7 +27,20 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User fetchById(int userId) throws UserNotFoundException {
-		// no business validations
 		return dao.fetchById(userId);
+	}
+
+	@Override
+	public User updatePhoneNo(User user) throws UserNotFoundException {
+		User userFetched = dao.fetchById(user.getUserId());
+		userFetched.setPhone(user.getPhone());
+		return dao.updateUser(userFetched.getUserId(), userFetched);
+	}
+
+	@Override
+	public User updatePassword(int userId, String newPassword) throws UserNotFoundException {
+		User user = dao.fetchById(userId);
+		user.setPassword(newPassword);
+		return dao.updateUser(userId, user);
 	}
 }
