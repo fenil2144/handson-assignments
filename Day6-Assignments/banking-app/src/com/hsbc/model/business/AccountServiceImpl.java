@@ -38,6 +38,8 @@ public class AccountServiceImpl implements AccountService{
 			accountDao.updateAccount(debitorAccount.getAccountNumber(), debitorAccount);
 			accountDao.updateAccount(creditorAccount.getAccountNumber(), creditorAccount);
 		}
+		else
+			throw new InsufficientBalanceException();
 		
 	}
 
