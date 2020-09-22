@@ -59,7 +59,7 @@ public class MainViewBankingController {
 				break;
 			case 4:
 				try{
-					System.out.println("Enter Depositor Account Id");
+					System.out.println("Enter Debitor Account Id");
 					int depositorAccount = scanner.nextInt();
 					
 					System.out.println("Enter Creditor Account Id");

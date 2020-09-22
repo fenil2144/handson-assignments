@@ -43,8 +43,7 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public Account[] getAllAccounts() {
-		// TODO Auto-generated method stub
-		return null;
+		return accountDao.fetchAccounts();
 	}
 
 }

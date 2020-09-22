@@ -19,7 +19,7 @@ public class AccountDaoImpl implements AccountDao{
 	}
 
 	@Override
-	public Account[] fetchAccouts() {
+	public Account[] fetchAccounts() {
 		return accountArray;
 	}
 

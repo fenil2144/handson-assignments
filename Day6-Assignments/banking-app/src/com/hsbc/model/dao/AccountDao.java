@@ -5,7 +5,7 @@ import com.hsbc.model.beans.Account;
 
 public interface AccountDao {
 	public Account store(Account account);
-	public Account[] fetchAccouts();
+	public Account[] fetchAccounts();
 	public Account fetchAccountById(int accountNumber) throws AccountNotFoundException;
 	public Account updateAccount(int accountNumber, Account account) throws AccountNotFoundException;
 }
