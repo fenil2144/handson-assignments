@@ -2,6 +2,7 @@ package com.hsbc.model.utility;
 
 import com.hsbc.model.business.UserServiceImpl;
 import com.hsbc.model.dao.ArrayBackedUserDao;
+import com.hsbc.model.dao.CollectionBackedUserDao;
 
 
 public class UserFactory {
@@ -12,7 +13,7 @@ public class UserFactory {
 		Object obj = null;
 		switch(type) {
 		case DAO : 
-			obj = new ArrayBackedUserDao();
+			obj = new CollectionBackedUserDao();
 			break;
 		case SERVICE :
 			obj = new UserServiceImpl();
