@@ -19,12 +19,8 @@ public class FileBackedDao implements UserDao{
 	
 	@Override
 	public User store(User user) {
-		
-		if(deserialize() != null){
-			userList = deserialize();
-		}
-		else
-			userList = new ArrayList<User>();
+		int id = userList.size();
+		user.setUserId(++id);
 		userList.add(user);
 		serialize(userList);
 		return user;
@@ -32,11 +28,7 @@ public class FileBackedDao implements UserDao{
 
 	@Override
 	public User[] fetchUsers() {
-		if(deserialize() != null){
-			userList = deserialize();
-		}
-		else
-			userList = null;
+		userList = deserialize();
 		User[] userArray = userList.toArray(new User[userList.size()]); 
 		return userArray;
 	}
