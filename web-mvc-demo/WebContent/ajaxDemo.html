@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax Demo</title>
+</head>
+<body>
+<input type = "text" id = "i1"> <button onclick="fetch()">Search</button>
+<div id="ajaxContent"></div>
+<script>
+	function fetch(){
+		var userId = document.getElementById('i1').value;
+		var searchUrl = "https://jsonplaceholder.typicode.com/users/"+userId;
+		var req = new XMLHttpRequest();
+		req.open("GET",searchUrl);
+		req.send();
+	    req.onreadystatechange = function() {
+            if(req.readyState == 4) {
+                var ele = document.getElementById('ajaxContent');
+                var response = req.responseText;
+                var jsObject = JSON.parse(response);
+                ele.innerHTML = "<p>Id: "+jsObject.id+", Name: "+jsObject.name+"</p>";
+            }
+        }
+	}
+</script>
+</body>
+</html>
